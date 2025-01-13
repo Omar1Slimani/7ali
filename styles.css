@@ -1,0 +1,123 @@
+body {
+  background-color: #000;
+  color: #efe9e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Arrière-plan avec effet de flou */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('7ali.png');
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  z-index: 1;
+}
+
+/* Conteneur des icônes */
+.icons {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  z-index: 2; /* Assure que les icônes sont au-dessus de l'arrière-plan */
+}
+
+/* Style des liens */
+.icons a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Conteneur des couches */
+.icons .layer {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+/* Effet de hover sur la rotation */
+.icons a:hover .layer {
+  transform: rotate(-35deg) skew(20deg);
+}
+
+/* Couches multiples pour les effets visuels */
+.icons .layer span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #180c0b;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Style des icônes */
+.icons .layer .fab {
+  font-size: 30px;
+  line-height: 55px;
+  text-align: center;
+  color: #1b0e0a;
+}
+
+/* Effets de transformation sur chaque couche lors du hover */
+.icons a:hover .layer span:nth-child(1) {
+  opacity: 0.2;
+}
+
+.icons a:hover .layer span:nth-child(2) {
+  opacity: 0.4;
+  transform: translate(5px, -5px);
+}
+
+.icons a:hover .layer span:nth-child(3) {
+  opacity: 0.6;
+  transform: translate(10px, -10px);
+}
+
+.icons a:hover .layer span:nth-child(4) {
+  opacity: 0.8;
+  transform: translate(15px, -15px);
+}
+
+/* Texte sous les icônes */
+.text {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #0f0e0d;
+  text-align: center;
+}
+
+/* Amélioration de la responsivité */
+@media (max-width: 768px) {
+  .icons .layer {
+      width: 45px;
+      height: 45px;
+  }
+
+  .icons .layer .fab {
+      font-size: 24px;
+  }
+
+  .text {
+      font-size: 12px;
+  }
+}
