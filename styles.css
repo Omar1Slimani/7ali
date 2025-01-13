@@ -2,13 +2,14 @@ body {
   background-color: #000;
   color: #efe9e9;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start; /* تغيير المحاذاة العمودية إلى الأعلى */
+  align-items: center; /* إبقاء المحاذاة الأفقية في المنتصف */
   height: 100vh;
   flex-direction: column;
   font-family: Arial, sans-serif;
   margin: 0;
   overflow: hidden;
+  text-align: center; /* محاذاة النصوص */
 }
 
 /* Arrière-plan avec effet de flou */
@@ -31,7 +32,9 @@ body::before {
   display: flex;
   gap: 20px;
   position: relative;
-  z-index: 2; /* Assure que les icônes sont au-dessus de l'arrière-plan */
+  z-index: 2;
+  justify-content: center; /* محاذاة الأيقونات في المنتصف أفقيًا */
+  margin-top: 20px; /* مسافة صغيرة من أعلى الشاشة */
 }
 
 /* Style des liens */
